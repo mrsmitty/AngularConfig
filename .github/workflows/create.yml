@@ -1,0 +1,11 @@
+name: infrastructure
+on: push
+jobs:
+  provision:
+    name: Deploy infrastructure
+    runs-on: ubuntu-latest
+    env:
+      ENV_FILE: ./infrastructure/envvars
+    steps:
+    - name: Source VARS
+      run: source $ENV_FILE

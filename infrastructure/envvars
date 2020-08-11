@@ -1,0 +1,5 @@
+export RG_NAME="demo-smitty-angular"
+export RG_LOCATION="australiaeast"
+export APP_SERVICE_NAME=""
+export WEB_BE_NAME=""
+export WEB_FE_NAME=""
