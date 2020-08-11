@@ -7,5 +7,6 @@ jobs:
     env:
       ENV_FILE: ./infrastructure/envvars
     steps:
+    - uses: actions/checkout@v2
     - name: Source VARS
       run: source $ENV_FILE
