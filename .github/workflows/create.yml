@@ -5,11 +5,11 @@ jobs:
     name: Deploy infrastructure
     runs-on: ubuntu-latest
     env:
-      ENV_FILE: $GITHUB_WORKSPACE/infrastructure/envvars
+      ENV_FILE: infrastructure/envvars
     steps:
     - uses: actions/checkout@v2
     - name: Source VARS
-      run: source $ENV_FILE
+      run: source $GITHUB_WORKSPACE/$ENV_FILE
     - name: Azure Login
       uses: azure/login@v1
       with:
@@ -18,6 +18,6 @@ jobs:
       uses: Azure/cli@v1.0.0
       with:
         inlineScript: |
-          source $ENV_FILE
+          source $GITHUB_WORKSPACE/$ENV_FILE
           chmod +x $GITHUB_WORKSPACE/infrastructure/create.sh
           $GITHUB_WORKSPACE/infrastructure/create.sh
