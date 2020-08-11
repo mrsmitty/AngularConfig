@@ -1,0 +1,6 @@
+export RG_NAME="demo-smitty-angular"
+export RG_LOCATION="australiaeast"
+export APP_SERVICE_NAME="demo-smitty-asp"
+export WEB_BE_NAME="demo-smitty-web-backend"
+export WEB_FE_NAME="demo-smitty-web-frontend"
+export NODE_VERSION="NODE|10.10"

@@ -1,0 +1,24 @@
+name: infrastructure
+on: push
+jobs:
+  provision:
+    name: Deploy infrastructure
+    runs-on: ubuntu-latest
+    env:
+      ENVVAR_PATH: infrastructure/envvars
+    steps:
+    - uses: actions/checkout@v2
+    - name: Source VARS
+      run: source $GITHUB_WORKSPACE/$ENVVAR_PATH
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Azure CLI Action
+      uses: Azure/cli@v1
+      with:
+        inlineScript: |
+          echo $GITHUB_WORKSPACE/$ENVVAR_PATH
+          source $GITHUB_WORKSPACE/$ENVVAR_PATH
+          chmod +x "$GITHUB_WORKSPACE/infrastructure/create.sh"
+          "$GITHUB_WORKSPACE/infrastructure/create.sh"
