@@ -20,7 +20,7 @@ jobs:
         ENV_FILE: infrastructure/envvars
       with:
         inlineScript: |
-          echo "$GITHUB_WORKSPACE/$ENV_FILE"
-          source "$GITHUB_WORKSPACE/$ENV_FILE"
+          echo "$GITHUB_WORKSPACE/infrastructure/envvars"
+          source "$GITHUB_WORKSPACE/infrastructure/envvars"
           chmod +x "$GITHUB_WORKSPACE/infrastructure/create.sh"
           "$GITHUB_WORKSPACE/infrastructure/create.sh"
