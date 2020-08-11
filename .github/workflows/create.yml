@@ -18,6 +18,6 @@ jobs:
       uses: Azure/cli@v1.0.0
       with:
         inlineScript: |
-          source $GITHUB_WORKSPACE/$ENV_FILE
-          chmod +x $GITHUB_WORKSPACE/infrastructure/create.sh
-          $GITHUB_WORKSPACE/infrastructure/create.sh
+          source "$GITHUB_WORKSPACE/$ENV_FILE"
+          chmod +x "$GITHUB_WORKSPACE/infrastructure/create.sh"
+          "$GITHUB_WORKSPACE/infrastructure/create.sh"
