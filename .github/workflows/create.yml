@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Source VARS
-      run: source $GITHUB_WORKSPACE/$ENV_FILE
+      run: source $GITHUB_WORKSPACE/$ENVVAR_PATH
     - name: Azure Login
       uses: azure/login@v1
       with:
