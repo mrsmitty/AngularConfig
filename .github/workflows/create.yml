@@ -5,7 +5,7 @@ jobs:
     name: Deploy infrastructure
     runs-on: ubuntu-latest
     env:
-      ENV_FILE: ./infrastructure/envvars
+      ENV_FILE: $GITHUB_WORKSPACE/infrastructure/envvars
     steps:
     - uses: actions/checkout@v2
     - name: Source VARS
